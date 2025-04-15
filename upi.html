@@ -1,41 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MKPayTrack - UPI Manager</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body id="upi">
   <header>
-    <div class="logo">MKPayTrack</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="transactions.html">Transactions</a></li>
-        <li><a href="upi.html">UPI Manager</a></li>
-        <li><a href="recovery-goals.html">Recovery Goals</a></li>
-      </ul>
-    </nav>
-    <button id="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+    <h2>UPI Manager</h2>
   </header>
 
   <main>
-    <section id="upi-manager-section">
-      <h2>UPI Manager</h2>
-      <div class="upi-form">
-        <input type="text" id="upi-name" placeholder="Your Name" />
-        <input type="text" id="upi-id" placeholder="Your UPI ID (e.g., example@bank)" />
-        <button id="save-upi">Save UPI</button>
-      </div>
-      <div id="upi-display"></div>
-    </section>
+    <div class="upi-form">
+      <input type="text" id="upi-name" placeholder="Your Name">
+      <input type="text" id="upi-id" placeholder="Your UPI ID">
+      <button id="save-upi">Save UPI</button>
+    </div>
+    <div id="upi-display"></div>
   </main>
 
-  <footer>
-    <p>© 2025 MKPayTrack. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <div class="bottom-nav">
+    <a href="index.html"><img src="icons/home.svg" alt="">Dashboard</a>
+    <a href="transactions.html"><img src="icons/transactions.svg" alt="">Transactions</a>
+    <a href="upi.html"><img src="icons/upi.svg" alt="">UPI Manager</a>
+    <a href="recovery-goals.html"><img src="icons/goals.svg" alt="">Goals</a>
+  </div>
 </body>
 </html>
