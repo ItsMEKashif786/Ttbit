@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKPayTrack - Dashboard</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="dashboard">
+  <header>
+    <div class="logo">MKPayTrack</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="transactions.html">Transactions</a></li>
+        <li><a href="upi.html">UPI Manager</a></li>
+        <li><a href="recovery-goals.html">Recovery Goals</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+  </header>
+
+  <main>
+    <section id="dashboard-section">
+      <h2>Dashboard</h2>
+      <div class="dashboard-counters">
+        <div class="counter" id="counter-given">
+          <h3>Total Given</h3>
+          <p>$0.00</p>
+        </div>
+        <div class="counter" id="counter-received">
+          <h3>Total Received</h3>
+          <p>$0.00</p>
+        </div>
+        <div class="counter" id="counter-pending">
+          <h3>Net Pending</h3>
+          <p>$0.00</p>
+        </div>
+      </div>
+      <!-- Animated Chart -->
+      <canvas id="dashboardChart"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MKPayTrack. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
