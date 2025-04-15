@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MKPayTrack</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">MKPayTrack</div>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#transactions">Transactions</a></li>
+        <li><a href="#upi-manager">UPI Manager</a></li>
+        <li><a href="#recovery-goals">Recovery Goals</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+  </header>
+
+  <main>
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="dashboard-counters">
+        <div class="counter" id="counter-given">
+          <h3>Total Given</h3>
+          <p>$0.00</p>
+        </div>
+        <div class="counter" id="counter-received">
+          <h3>Total Received</h3>
+          <p>$0.00</p>
+        </div>
+        <div class="counter" id="counter-pending">
+          <h3>Net Pending</h3>
+          <p>$0.00</p>
+        </div>
+      </div>
+      <canvas id="dashboardChart"></canvas>
+    </section>
+
+    <!-- Transactions Section -->
+    <section id="transactions">
+      <h2>Transactions</h2>
+      <div class="transaction-form">
+        <!-- Hidden input used during editing -->
+        <input type="hidden" id="transaction-id" />
+        <input type="text" id="transaction-purpose" placeholder="Purpose/Description" />
+        <input type="number" id="transaction-amount" placeholder="Amount" />
+        <select id="transaction-type">
+          <option value="gave">Gave</option>
+          <option value="received">Received</option>
+        </select>
+        <select id="transaction-mode">
+          <option value="cash">Cash</option>
+          <option value="upi">UPI</option>
+        </select>
+        <input type="date" id="transaction-date" />
+        <select id="transaction-status">
+          <option value="pending">Pending</option>
+          <option value="cleared">Cleared</option>
+        </select>
+        <button id="submit-transaction">Add Transaction</button>
+        <button id="cancel-transaction" style="display:none;">Cancel</button>
+      </div>
+
+      <div class="transaction-filters">
+        <input type="text" id="filter-name" placeholder="Filter by name/purpose">
+        <input type="date" id="filter-date" />
+        <select id="filter-status">
+          <option value="">All Status</option>
+          <option value="pending">Pending</option>
+          <option value="cleared">Cleared</option>
+        </select>
+        <select id="filter-mode">
+          <option value="">All Modes</option>
+          <option value="cash">Cash</option>
+          <option value="upi">UPI</option>
+        </select>
+        <button id="apply-filters">Apply Filters</button>
+        <button id="clear-filters">Clear Filters</button>
+      </div>
+      <div id="transaction-list"></div>
+    </section>
+
+    <!-- UPI Manager Section -->
+    <section id="upi-manager">
+      <h2>UPI Manager</h2>
+      <div class="upi-form">
+        <input type="text" id="upi-name" placeholder="Your Name" />
+        <input type="text" id="upi-id" placeholder="Your UPI ID (e.g., example@bank)" />
+        <button id="save-upi">Save UPI</button>
+      </div>
+      <div id="upi-display"></div>
+    </section>
+
+    <!-- Recovery Goals Section -->
+    <section id="recovery-goals">
+      <h2>Monthly Recovery Goals</h2>
+      <div class="goal-form">
+        <input type="number" id="goal-amount" placeholder="Set Monthly Recovery Goal" />
+        <button id="set-goal">Set Goal</button>
+      </div>
+      <div class="goal-progress">
+        <p>Progress: <span id="goal-progress-text">0%</span></p>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MKPayTrack. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
